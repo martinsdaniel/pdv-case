@@ -114,3 +114,74 @@ make test/watch # Watch all tests in every change
     }
 }`
 ```
+
+* **Error Response:**
+
+  * **Code:** 500 <br />
+    **Content:** `{
+    "message": "PDV_INVALID_ID",
+    "status": 500
+}`
+
+
+
+* **Method:**
+`GET`
+```bash
+ http://localhost:3030/pdv/
+```
+
+* **EXAMPLE BODY REQUEST:**
+ ```javascript
+   {
+     "lat": -46.588654,
+     "long": -23.709635
+   }
+```   
+
+* **Success Response:**
+* **Code:** 200 <br />
+```javascript
+    **Content:** `{
+    "pdvs": {
+        "id": "72117a28-f20e-4d5b-9468-020e9095755b",
+        "tradingName": "Company Name",
+        "ownerName": "owner name",
+        "document": "21.632.581/0001-54",
+        "coverageArea": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -46.61026,
+                            -23.66622
+                        ],
+                        [
+                            -46.62596,
+                            -23.66985
+                        ],
+                    ]
+                ]
+            ]
+        },
+        "address": {
+            "type": "Point",
+            "coordinates": [
+                -46.588654,
+                -23.709635
+            ]
+        },
+        "createdAt": "2019-10-25T23:34:10.476Z",
+        "updatedAt": "2019-10-25T23:34:10.476Z",
+        "deletedAt": null
+    }
+}`
+```
+
+* **Error Response:**
+
+  * **Code:** 406 <br />
+    **Content:** `{
+    "message": "EMPTY_LAT_AND_LONG",
+    "status": 406}`
