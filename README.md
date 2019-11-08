@@ -57,3 +57,15 @@ make test/watch # Watch all tests in every change
       }
     }
 ```
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{ message : PDV was successfully created" }`
+ 
+* **Error Response:**
+
+  * **Code:** 500 <br />
+    **Content:** `{
+    "message": "INVALID_DOCUMENT",
+    "status": 500"
+}`
