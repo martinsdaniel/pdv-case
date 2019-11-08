@@ -20,4 +20,40 @@ make test/watch # Watch all tests in every change
 ```
 
 # SEARCH API ENDPOINTS
-  <http://localhost:3030/pdv>
+* **Method:**
+`POST`
+```bash
+ http://localhost:3030/pdv
+```
+* **EXAMPLE BODY REQUEST:**
+```javascript
+    {
+      "tradingName": "Company Name",
+      "ownerName": "owner name",
+      "document": "21.632.581/0001-54",
+      "coverageArea": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -46.71746,
+                -23.50814
+              ],
+              [
+                -46.72013,
+                -23.50895
+              ]
+            ]
+          ]
+        ]
+      },
+      "address": {
+        "type": "Point",
+        "coordinates": [
+          -46.689537,
+          -23.560505
+        ]
+      }
+    }
+```
