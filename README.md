@@ -19,7 +19,7 @@ make test # Run all tests
 make test/watch # Watch all tests in every change
 ```
 
-# SEARCH API ENDPOINTS
+# API ENDPOINTS
 * **Method:**
 `POST`
 ```bash
@@ -69,3 +69,48 @@ make test/watch # Watch all tests in every change
     "message": "INVALID_DOCUMENT",
     "status": 500"
 }`
+
+* **Method:**
+`GET`
+```bash
+ http://localhost:3030/pdv/:id
+```
+* **Success Response:**
+* **Code:** 200 <br />
+```javascript
+    **Content:** `{
+    "pdvs": {
+        "id": "72117a28-f20e-4d5b-9468-020e9095755b",
+        "tradingName": "Company Name",
+        "ownerName": "owner name",
+        "document": "21.632.581/0001-54",
+        "coverageArea": {
+            "type": "MultiPolygon",
+            "coordinates": [
+                [
+                    [
+                        [
+                            -46.61026,
+                            -23.66622
+                        ],
+                        [
+                            -46.62596,
+                            -23.66985
+                        ],
+                    ]
+                ]
+            ]
+        },
+        "address": {
+            "type": "Point",
+            "coordinates": [
+                -46.588654,
+                -23.709635
+            ]
+        },
+        "createdAt": "2019-10-25T23:34:10.476Z",
+        "updatedAt": "2019-10-25T23:34:10.476Z",
+        "deletedAt": null
+    }
+}`
+```
