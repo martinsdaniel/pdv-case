@@ -1,0 +1,31 @@
+version: "2"
+
+services:
+
+  postgres:
+    image: "kartoza/postgis:11.0-2.5"
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    environment:
+        POSTGRES_PASSWORD: "searchpdv"
+        POSTGRES_USER: "searchpdv"
+        POSTGRES_DB: "searchpdv" 
+    volumes:
+        - "./db:/db"     
+
+  api:
+    image: "daniel/search-pdv"
+    hostname: api
+    build: .
+    environment:
+      WAIT_HOSTS: postgres:5432
+      DB_HOST: "postgres"
+      DB_DATABASE: "searchpdv"
+      DB_USER: "searchpdv"
+      DB_PASSWORD: "searchpdv"
+      DB_PORT: "5432"
+    ports:
+        - 3030:3030
+        - 9221:9221  
+    
