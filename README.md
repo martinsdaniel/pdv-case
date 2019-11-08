@@ -20,6 +20,7 @@ make test/watch # Watch all tests in every change
 ```
 
 # API ENDPOINTS
+## Create
 * **Method:**
 `POST`
 ```bash
@@ -69,6 +70,8 @@ make test/watch # Watch all tests in every change
     "message": "INVALID_DOCUMENT",
     "status": 500"
 }`
+
+## Search by ID
 
 * **Method:**
 `GET`
@@ -123,7 +126,7 @@ make test/watch # Watch all tests in every change
     "status": 500
 }`
 
-
+## Search by Lat and Long
 
 * **Method:**
 `GET`
