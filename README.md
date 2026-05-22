@@ -1,4 +1,4 @@
-# pdv-case
+# pdv-case - Deprecated
 The code style is based in [Airbnb JS style guide](https://github.com/airbnb/javascript) as is.
 
 ## How to Run
